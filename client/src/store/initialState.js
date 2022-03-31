@@ -1,5 +1,6 @@
 const initialState= {
-    users: []
+    users: {items: []}
+    //items: []
 }
 
 export default initialState

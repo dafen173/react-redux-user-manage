@@ -23,11 +23,11 @@ const UserList444 = () => {
 
     useEffect(() => {
         dispatch(getUsers())
-    }, [])
+    }, [dispatch])
 
     //console.log(usersome[0].title)
-    console.log(users555[0])
-
+    console.log(users555)
+    //console.log(users555[0])
 
     //const dispatchUsers = useDispatch()
     // const callBackHandler = (event) => {
@@ -55,9 +55,9 @@ const UserList444 = () => {
         <div>
             {/* {users555[0]} */}
 
-            {/* {users555.map(item => 
+            {users555.map(item => 
                 <TodoItem todo={item}/>
-            )} */}
+            )}
         </div>
 
         
