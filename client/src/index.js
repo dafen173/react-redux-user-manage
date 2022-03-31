@@ -31,9 +31,6 @@ const store = createStore(
 
 //store.dispatch(getUsers())
 
-
-
-
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
