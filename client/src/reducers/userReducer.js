@@ -1,8 +1,23 @@
-//import initialState from "../store/initialState"
+import { createStore } from "redux";
+import thunk from 'redux-thunk'
+import { composeWithDevTools } from 'redux-devtools-extension'
+import {compose, applyMiddleware} from 'redux'
+import rootReducer from './index'
+import initialState from "../store/initialState"
 //const goods = (state = [], action) => {
 
+// const defaultState = {
+//     items: [],
+//     isFetching: true,
+// }
 
-const userReducer = (state = [], action) => {
+// export const store = createStore(
+//     rootReducer, 
+//     initialState, 
+//     composeWithDevTools(applyMiddleware(thunk))
+//   );
+
+const userReducer = (state = initialState, action) => {
     switch (action.type) {
         case 'ADD_GOODS' :
             console.log('add goods work')

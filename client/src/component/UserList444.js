@@ -19,13 +19,14 @@ const UserList444 = () => {
     
     //const dispatch = useDispatch()
     const dispatch = useDispatch()
-    const usersome = useSelector(state => state.users.items)
+    const users555 = useSelector(state => state.users.items)
 
     useEffect(() => {
         dispatch(getUsers())
     }, [])
 
-    console.log(usersome)
+    //console.log(usersome[0].title)
+    console.log(users555[0])
 
 
     //const dispatchUsers = useDispatch()
@@ -52,7 +53,7 @@ const UserList444 = () => {
     return (
 
         <div>
-            {usersome.title}
+            {/* {users555[0]} */}
 
             {/* {users555.map(item => 
                 <TodoItem todo={item}/>

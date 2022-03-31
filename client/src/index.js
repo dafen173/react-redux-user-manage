@@ -1,4 +1,3 @@
-//import React from 'react'
 import React, {useEffect, useSelector, useState} from 'react'
 import ReactDOM from 'react-dom'
 import {compose, createStore, applyMiddleware} from 'redux'
@@ -10,9 +9,9 @@ import './index.css'
 import App from './component/App'
 import reportWebVitals from './reportWebVitals'
 import rootReducer from './reducers'
-//import initialState from './store/initialState'
+import initialState from './store/initialState'
 import { getUsers } from './action/getUsers'
-
+//import {store} from "./reducers/userReducer"
 
 /* const store = createStore(rootReducer, compose(
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
@@ -22,12 +21,12 @@ import { getUsers } from './action/getUsers'
 //   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 // ))
 
+
 const store = createStore(
   rootReducer, 
-  //initialState, 
+  initialState, 
   composeWithDevTools(applyMiddleware(thunk))
 );
-
 
 //store.dispatch(getUsers())
 
@@ -38,7 +37,7 @@ ReactDOM.render(
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')
-);
+)
 
 
 // If you want to start measuring performance in your app, pass a function
