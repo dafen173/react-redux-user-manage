@@ -5,7 +5,7 @@ import { getUsers } from '../action/getUsers'
 //import {connect} from 'react-redux'
 //import { addGoods } from "../action"
 import { addUsers } from "../action/addUsers"
-
+import { addUsers222 } from "../action/addUsers222"
 
 //const AddUserTwo = ({syncUsers}) => {
 
@@ -39,7 +39,8 @@ const AddUserRedux = () => {
             setUserValue('')
         } */
 
-        dispatchUsers(addUsers(userValue, groupValue))
+        //dispatchUsers(addUsers(userValue, groupValue))
+        dispatchUsers(addUsers222(userValue, groupValue))
         setUserValue('')
     }
 
