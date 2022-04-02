@@ -7,9 +7,5 @@ export const getUsers = () => {
 }
 
 
-
-
 //https://jsonplaceholder.typicode.com/posts?_limit=5
-
-
 //http://localhost:8080/api/manage-user

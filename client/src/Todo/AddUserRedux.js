@@ -19,14 +19,14 @@ const AddUserRedux = () => {
    
     //==================================================
     //const dispatch = useDispatch()
-    const dispatch = useDispatch()
-    useEffect(() => {
-        dispatch(getUsers())
-    }, [])
+//     const dispatch = useDispatch()
+//     useEffect(() => {
+//         dispatch(getUsers())
+//     }, [])
 
-    const users555 = useSelector(state => state.userReducer)
-    console.log(users555)
-//======================================================
+//     const users555 = useSelector(state => state.userReducer)
+//     console.log(users555)
+// //======================================================
 
     const dispatchUsers = useDispatch()
     const callBackHandler = (event) => {

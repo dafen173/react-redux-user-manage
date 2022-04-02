@@ -34,13 +34,17 @@ const userReducer = (state = initialState, action) => {
         case 'ADD_USERS' :
             console.log('addUsers work')
             //console.log(state)
-            return [
+            return {
                 ...state,
-                {
-                    username: action.username,
-                    groupname: action.groupname
-                }
-            ]
+                // {
+                //     username: action.username,
+                //     groupname: action.groupname
+                // }
+                //...action.payload  
+                items: state.items.concat([action.payload])     
+                
+//return { ...state, posts: state.posts.concat([action.payload]) }
+            }
         case 'GET_USERS' :
             return {
                 ...state,
@@ -54,5 +58,7 @@ const userReducer = (state = initialState, action) => {
 }
 
 export default userReducer
+
+
 
 
