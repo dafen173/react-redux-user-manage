@@ -41,7 +41,10 @@ const userReducer = (state = initialState, action) => {
                 //     groupname: action.groupname
                 // }
                 //...action.payload  
-                items: state.items.concat([action.payload])     
+                
+                //items: state.items.concat([action.payload])   
+                items: action.payload
+                
                 
 //return { ...state, posts: state.posts.concat([action.payload]) }
             }
