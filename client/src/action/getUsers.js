@@ -1,6 +1,6 @@
 export const getUsers = () => {
     return async dispatch => {
-        const response = await fetch('https://jsonplaceholder.typicode.com/todos/?_limit=5')
+        const response = await fetch('http://localhost:8080/api/manage-user')
         const json = await response.json()
         dispatch({type: 'GET_USERS', payload: json })
     }
@@ -9,3 +9,5 @@ export const getUsers = () => {
 
 
 //https://jsonplaceholder.typicode.com/posts?_limit=5
+
+//http://localhost:8080/api/manage-user

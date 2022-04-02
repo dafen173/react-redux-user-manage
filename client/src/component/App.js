@@ -8,7 +8,7 @@ import React, {useEffect, useSelector, useState} from 'react'
 //import Loader from '../Loader'
 //import Modal from './Modal/Modal'
 //import AddUserTwo from '../Todo/AddUserTwo'
-//import AddUserRedux from '../Todo/AddUserRedux'
+import AddUserRedux from '../Todo/AddUserRedux'
 //import GoodsList from '../containers/GoodsList'
 //import UserConnect from '../containers/UserConnect'
 import UserList333 from './UserList333'
@@ -203,13 +203,13 @@ function App() {
             <h1>User Management</h1>  
 
             <UserList444 />
-
+            <AddUserRedux />
 
             {/* <UserList333 /> */}
          
             {/* <UserConnect /> */}
 
-            {/* <AddUserRedux /> */}
+            
 
 
             {/* <AddUserTwo handler={getFromHandler} /> */}

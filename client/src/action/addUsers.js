@@ -1,8 +1,13 @@
 export const addUsers = (username, groupname) => ({
     type: 'ADD_USERS',
-    username: username,
-    groupname: groupname
-    
-    //payLoad:
+    payload: {
+                username: username,
+                groupname: groupname
+            }
+        
+   // payload: {items: [{username: username, groupname: groupname}]}
+       
 })
+
+
 
