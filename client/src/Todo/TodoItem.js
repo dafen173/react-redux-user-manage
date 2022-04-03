@@ -2,6 +2,7 @@ import React, {useContext} from "react"
 import PropTypes from "prop-types"
 //import Context from '../context'
 import Modal from '../EditUserModal/EditUserModal'
+import DeleteUser from "../component/DeleteUser"
 
 
 const styles = {
@@ -53,7 +54,8 @@ function TodoItem ( {todo, index, onChange} ) {
                 {todo.groupname} 
             </span>   
             <Modal todoModal={todo}/>  
-            <button className="rm">Delete</button>                   
+            {/* <button className="rm">Delete</button>    */}
+            <DeleteUser todo={todo}/>                
         </li>
     )
 }
