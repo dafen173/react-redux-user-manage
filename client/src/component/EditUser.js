@@ -31,14 +31,7 @@ function EditUser (props) {
                 <option value="soad">soad777</option>  
                 <option value="korn">korn777</option>
             </select>
-            <button type="submit">Edit User</button> 
-            
-            
-            
-            {/* {editHandler ? 
-            <button type="submit">Edit User</button> 
-            : <button type="submit">Add User</button>} */}
-            
+            <button type="submit">Edit User</button>            
         </form>
     )
 }

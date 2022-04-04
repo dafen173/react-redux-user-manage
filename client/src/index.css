@@ -30,7 +30,14 @@ code {
   border-radius: 20%;
   color: #fff;
   border: none;
+  margin-right: 1em;
 }
+
+
+/* .divEdit {
+  
+} */
+
 
 .done {
   text-decoration: line-through;

@@ -9,12 +9,11 @@ class UserController {
                 [username, groupname, created]
             )
         //res.json(newPerson.rows[0])
-
-        const users = await db.query(`SELECT * FROM users`)
+        const users = await db.query(`SELECT * FROM users ORDER BY id ASC`)
         res.json(users.rows)
     }
     async getUsers(req, res) {
-        const users = await db.query(`SELECT * FROM users`)
+        const users = await db.query(`SELECT * FROM users ORDER BY id ASC`)
         res.json(users.rows)
     }
     async getUser(req, res) {
@@ -26,7 +25,9 @@ class UserController {
             'UPDATE users set username = $1, groupname = $2 where id = $3 RETURNING *',
             [username, groupname, id]
         )
-        res.json(user.rows)
+        //res.json(user.rows)
+        const users = await db.query(`SELECT * FROM users ORDER BY id ASC`)
+        res.json(users.rows)
     }
     async deleteUser(req, res) {
         const id = req.params.id

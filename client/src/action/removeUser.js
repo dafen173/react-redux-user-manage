@@ -4,7 +4,7 @@ export const removeUser = (id) => {
               method: 'DELETE'
             }) 
         const json = await response.json()
-        dispatch({type: 'ADD_USERS', payload: json })
+        dispatch({type: 'DELETE_USER', payload: json })
     }
 }
 

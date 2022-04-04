@@ -1,16 +1,16 @@
 import React, {useContext} from "react"
 import PropTypes from "prop-types"
 //import Context from '../context'
-import Modal from '../EditUserModal/EditUserModal'
+import Modal from '../component/EditUserModal'
 import DeleteUser from "../component/DeleteUser"
-
+import EditUserRedux from '../component/EditUserRedux'
 
 const styles = {
     li: {
       display: 'flex',
       justifyContent: 'space-between',
       alignItems: 'center',
-      padding: '.5rem 1rem',
+      padding: '.5rem 2rem',
       border: '1px solid #ccc',
       borderRadius: '4px',
       marginBottom: '.5rem'
@@ -32,12 +32,12 @@ function TodoItem ( {todo, index, onChange} ) {
     return (
         <li style={styles.li}>
             <span className={classes.join(' ')}>
-                <input 
+                {/* <input 
                   type='checkbox' 
                   checked={todo.completed}
                   style={styles.input} 
                   onChange={() => onChange(todo.id)} 
-                />
+                /> */}
 
                 <strong>{index + 1}</strong>
                 &nbsp;
@@ -53,12 +53,15 @@ function TodoItem ( {todo, index, onChange} ) {
                 &nbsp;
                 {todo.groupname} 
             </span>   
-            <Modal todoModal={todo}/>  
-            {/* <button className="rm">Delete</button>    */}
-            <DeleteUser todo={todo}/>                
+
+            <div>
+              <EditUserRedux todo={todo}/>
+              <DeleteUser todo={todo}/>  
+            </div>                    
         </li>
     )
 }
+
 
 
 /* TodoItem.propTypes = {
@@ -69,5 +72,4 @@ function TodoItem ( {todo, index, onChange} ) {
 
 export default TodoItem
 
-
-//<button className="rm" onClick={ () => removeTodoKey(todo.id) }>Delete</button>        
+      

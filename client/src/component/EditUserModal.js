@@ -1,7 +1,7 @@
 import React from 'react'
-import {useState, useContext} from "react"
+import {useState} from "react"
 import './EditUserModal.css'
-import EditUser from '../Todo/EditUser'
+import EditUser from './EditUser'
 //import AddUserTwo from '../Todo/AddUserTwo'
 //import Context from '../context'
 

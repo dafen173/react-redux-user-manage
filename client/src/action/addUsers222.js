@@ -12,7 +12,7 @@ export const addUsers222 = (userValue, groupValue) => {
             }
         })
         const json = await response.json()
-        dispatch({type: 'ADD_USERS', payload: json })
+        dispatch({type: 'ADD_USER', payload: json })
     }
 }
 

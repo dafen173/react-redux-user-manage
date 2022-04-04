@@ -31,7 +31,7 @@ const userReducer = (state = initialState, action) => {
                     image: action.image
                 }
             ]
-        case 'ADD_USERS' :
+        case 'ADD_USER' :
             console.log('addUsers work')
             //console.log(state)
             return {
@@ -43,17 +43,24 @@ const userReducer = (state = initialState, action) => {
                 //...action.payload  
                 
                 //items: state.items.concat([action.payload])   
-                items: action.payload
-                
-                
+                items: action.payload   
 //return { ...state, posts: state.posts.concat([action.payload]) }
             }
         case 'GET_USERS' :
             return {
                 ...state,
                 items: action.payload
-            }           
-           
+            }    
+        case 'DELETE_USER' :
+            return {
+                ...state,
+                items: action.payload
+            }   
+        case 'EDIT_USER' :
+            return {
+                ...state,
+                items: action.payload
+            }             
         default:
             return state
     }
