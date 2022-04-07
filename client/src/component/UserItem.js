@@ -1,9 +1,9 @@
 import React, {useContext} from "react"
 import PropTypes from "prop-types"
 //import Context from '../context'
-import Modal from '../component/EditUserModal'
-import DeleteUser from "../component/DeleteUser"
-import EditUserRedux from '../component/EditUserRedux'
+import Modal from './EditUserModal'
+import DeleteUser from "./DeleteUser"
+import EditUserRedux from './EditUserRedux'
 
 const styles = {
     li: {
@@ -20,7 +20,7 @@ const styles = {
     }
   }
 
-function TodoItem ( {todo, index, onChange} ) {
+function UserItem ( {todo, index} ) {
 
   //  const {removeTodoKey} = useContext(Context)
 
@@ -70,6 +70,6 @@ function TodoItem ( {todo, index, onChange} ) {
     onChange: PropTypes.func.isRequired
   } */
 
-export default TodoItem
+export default UserItem
 
       

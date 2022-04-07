@@ -1,6 +1,8 @@
 const initialState= {
-    users: {items: []}
+    users: {items: []},
     //items: []
+    
+    groups: {groupitems: []}
 }
 
 export default initialState

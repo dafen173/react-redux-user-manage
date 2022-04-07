@@ -17,6 +17,7 @@
   "dependencies": {
     "express": "^4.17.3",
     "pg": "^8.7.3",
+    "react-router-dom": "^6.3.0",
     "uuid": "^7.0.3"
   },
   "devDependencies": {

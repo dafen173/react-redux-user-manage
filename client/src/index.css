@@ -34,6 +34,28 @@ code {
 }
 
 
+
+header {
+  background-color: rgb(165, 79, 9);
+  padding: 2rem 0;
+  text-align: center;
+}
+header > a {
+  color: white;
+  text-decoration: none;
+  padding: 0 1rem;
+}
+header > a:hover {
+  text-decoration: underline;
+}
+footer {
+  background-color: rgb(165, 79, 9);
+  padding: 2rem 0;
+  text-align: center;
+  margin-top: 2rem;
+  color: white;
+}
+
 /* .divEdit {
   
 } */

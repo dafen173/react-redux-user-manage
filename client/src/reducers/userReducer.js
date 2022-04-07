@@ -60,7 +60,13 @@ const userReducer = (state = initialState, action) => {
             return {
                 ...state,
                 items: action.payload
-            }             
+            }    
+        // case 'ADD_GROUP' :
+        //     return {
+        //         ...state,
+        //         //items: action.payload
+        //         items: state.items.concat([action.payload]) 
+        //     }          
         default:
             return state
     }

@@ -1,16 +1,15 @@
 import React from 'react'
 import { useDispatch } from "react-redux"
-import {removeUser} from '../action/removeUser'
+//import {removeUser} from '../action/removeUser'
+import { removeGroup } from '../action/removeGroup'
 
-function DeleteUser (props) {
+function DeleteGroup (props) {
   const dispatch = useDispatch()
-  const deleteId = props.todo.id
-  //const groupId = props.group.id
+  const deleteId = props.group.id
 
   function deleteHandler () {
     console.log(deleteId)
-    //console.log(groupId)
-    dispatch(removeUser(deleteId))
+    dispatch(removeGroup(deleteId))
   }
   return (  
     <React.Fragment>
@@ -21,6 +20,6 @@ function DeleteUser (props) {
   )     
 }
     
-export default DeleteUser
+export default DeleteGroup
 
 
