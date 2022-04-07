@@ -20,21 +20,17 @@ export const AddUserRedux = () => {
     }, [])
     
     const groupNameSelector = useSelector(state => state.groups.groupitems)
-    
-    // console.log(groupNameSelector)
-    // groupNameSelector.map( (item) => {
-    //     console.log(item.groupname)
-    // })
-
-    console.log(groupNameSelector[0])
-
+ 
     const [userValue, setUserValue] = useState('')
-    const [groupValue, setGroupValue] = useState(groupNameSelector[0].groupname)
-    //const [groupValue, setGroupValue] = useState('')
+    const [groupValue, setGroupValue] = useState('')
+    //const [groupValue, setGroupValue] = useState(groupNameSelector[0].groupname)
     
-    
+    useEffect(() => {
+        if (groupNameSelector.length)
+        setGroupValue(groupNameSelector[0].groupname)
+     }, [groupNameSelector])
     //setGroupValue(groupNameSelector[0].groupname)
-
+    
 
     //==================================================
     //const dispatch = useDispatch()
@@ -60,6 +56,22 @@ export const AddUserRedux = () => {
     //     console.log(i.groupname)
     // }
     
+
+    // if (groupNameSelector.length === 0) {
+    //     console.log('Data is not found!!!!')
+    //     return <div>Data is not found!!!!</div> 
+    //  } 
+
+    //  console.log(groupNameSelector[0].groupname)
+    //  console.log('groupValue is ' + groupValue)
+
+
+
+     //setGroupValue(groupNameSelector[0].groupname)
+     
+
+
+
     return (
         <>           
             <form onSubmit={callBackHandler}> 
