@@ -50,6 +50,10 @@ export const AddUserRedux = () => {
 
         //console.log('group key is ' + groupKey)
         console.log('groupValue is ' + groupValue)
+
+        const selectedGroup = groupNameSelector.find(el => el.groupname === groupValue)
+        console.log(selectedGroup)
+        console.log(selectedGroup.id)
     }
         
     //console.log(groupNameSelector[2].groupname)
@@ -69,33 +73,43 @@ export const AddUserRedux = () => {
 
     //setGroupValue(groupNameSelector[0].groupname)
      
+
     const selectHandler = (event) => {
-        event.preventDefault()
-        setGroupValue(event.target.value)
-        
-        console.log(event.target.value)
-        console.log(event.currentTarget)
-        
-        let value = event.currentTarget.getAttribute('value')
-        console.log(value)
+        event.preventDefault();
+        //setGroupValue(event.target.value)
 
-        let data = event.target.getAttribute('data')
-        console.log(data)
+        //setGroupValue(prev => prev + 1)
 
-
-        // let value = event.target.getAttribute('value')
-        // console.log(value)
-        //console.log(event.detail.item)
+        // const test = groupNameSelector.find(el => el.groupname === groupValue)
+        // console.log(test)
     }
     
-    
+
+
+    // console.log(groupValue)
+    // const test = groupNameSelector.find(el => el.groupname === groupValue)
+    // console.log(test)
+
+    // setTimeout( () => { 
+    //     console.log(test.id) 
+    // }, 2000);
+
+
+
+    // if (groupNameSelector.length) {
+    //     const test = groupNameSelector.find(el => el.groupname === groupValue)
+    //     console.log(test)
+    //     console.log(test.id)
+    // }
+
+
+
+
     return (
         <>           
             <form onSubmit={callBackHandler}> 
                 <input value={userValue} onChange={ e => setUserValue(e.target.value)} />
-                {/* <select value={groupValue} onChange={ ( e => setGroupValue(e.target.value) ) && ( k => setGroupKey(k.target.key) ) }  >   */}
-                {/* <select value={groupValue} onChange={e => setGroupValue(e.target.value)}> */}
-                <select value={groupValue} onChange={selectHandler}>
+                <select value={groupValue} onChange={ e => setGroupValue(e.target.value)}>
                     {groupNameSelector.map( item => 
                         // <option key={item.id} value={item.groupname}>{item.groupname}</option> 
                         <option key={item.id} value={item.groupname} data={item.id}>{item.groupname}</option>                                                 
