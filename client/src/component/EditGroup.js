@@ -3,6 +3,7 @@ import {useState} from "react"
 import { useDispatch } from "react-redux"
 import './EditUserModal.css'
 import { editGroup } from '../action/editGroup'
+import { editGroupOnUsersPage } from '../action/editGroupOnUsersPage'
 
 
 export const EditGroup = (props) => {
@@ -18,8 +19,10 @@ export const EditGroup = (props) => {
         e.preventDefault()
         console.log(groupValue)
         console.log(describeValue)
-
         dispatch(editGroup(groupValue, describeValue, editId))
+
+        dispatch(editGroupOnUsersPage(groupValue, editId))
+
         setIsOpen(false)
     }
 

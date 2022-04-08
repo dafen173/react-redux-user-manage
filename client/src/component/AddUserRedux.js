@@ -9,10 +9,6 @@ import { groups } from "../containers/groups"
 
 export const AddUserRedux = () => {
     
-    // const dispatchGroups = useDispatch()
-    // useLayoutEffect(() => {
-    //     dispatchGroups(getGroups())
-    // }, [])
 
     const dispatchGroups = useDispatch()
     useEffect(() => {
@@ -24,7 +20,9 @@ export const AddUserRedux = () => {
     const [userValue, setUserValue] = useState('')
     const [groupValue, setGroupValue] = useState('')
     //const [groupValue, setGroupValue] = useState(groupNameSelector[0].groupname)
+    const [groupKey, setGroupKey] = useState(null)
     
+
     useEffect(() => {
         if (groupNameSelector.length)
         setGroupValue(groupNameSelector[0].groupname)
@@ -44,10 +42,14 @@ export const AddUserRedux = () => {
 // //======================================================
 
     const dispatchUsers = useDispatch()
+
     const callBackHandler = (event) => {
         event.preventDefault()
         dispatchUsers(addUsers222(userValue, groupValue))
         setUserValue('')
+
+        //console.log('group key is ' + groupKey)
+        console.log('groupValue is ' + groupValue)
     }
         
     //console.log(groupNameSelector[2].groupname)
@@ -65,20 +67,38 @@ export const AddUserRedux = () => {
     //  console.log(groupNameSelector[0].groupname)
     //  console.log('groupValue is ' + groupValue)
 
-
-
-     //setGroupValue(groupNameSelector[0].groupname)
+    //setGroupValue(groupNameSelector[0].groupname)
      
+    const selectHandler = (event) => {
+        event.preventDefault()
+        setGroupValue(event.target.value)
+        
+        console.log(event.target.value)
+        console.log(event.currentTarget)
+        
+        let value = event.currentTarget.getAttribute('value')
+        console.log(value)
+
+        let data = event.target.getAttribute('data')
+        console.log(data)
 
 
-
+        // let value = event.target.getAttribute('value')
+        // console.log(value)
+        //console.log(event.detail.item)
+    }
+    
+    
     return (
         <>           
             <form onSubmit={callBackHandler}> 
                 <input value={userValue} onChange={ e => setUserValue(e.target.value)} />
-                <select value={groupValue} onChange={ e => setGroupValue(e.target.value)}>  
+                {/* <select value={groupValue} onChange={ ( e => setGroupValue(e.target.value) ) && ( k => setGroupKey(k.target.key) ) }  >   */}
+                {/* <select value={groupValue} onChange={e => setGroupValue(e.target.value)}> */}
+                <select value={groupValue} onChange={selectHandler}>
                     {groupNameSelector.map( item => 
-                        <option key={item.id} value={item.groupname}>{item.groupname}</option>                                                   
+                        // <option key={item.id} value={item.groupname}>{item.groupname}</option> 
+                        <option key={item.id} value={item.groupname} data={item.id}>{item.groupname}</option>                                                 
                     )}
                 </select>                    
                 <button type="submit">Add User</button>
