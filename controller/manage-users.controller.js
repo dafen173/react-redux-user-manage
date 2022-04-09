@@ -3,10 +3,10 @@ const db = require('../manage-users-db')
 
 class UserController {
     async createUser(req, res) {
-        const {username, groupname, created, completed} = req.body
+        const {username, groupname, created, group_id} = req.body
         const newPerson = await db.query(
-                `INSERT INTO users (username, groupname, created) values ($1, $2, $3) RETURNING *`, 
-                [username, groupname, created]
+                `INSERT INTO users (username, groupname, created, group_id) values ($1, $2, $3, $4) RETURNING *`, 
+                [username, groupname, created, group_id]
             )
         //res.json(newPerson.rows[0])
         const users = await db.query(`SELECT * FROM users ORDER BY id ASC`)
@@ -29,6 +29,19 @@ class UserController {
         const users = await db.query(`SELECT * FROM users ORDER BY id ASC`)
         res.json(users.rows)
     }
+
+    async updateUserGroupname(req, res) {
+        const {groupname, group_id} = req.body
+        const user = await db.query(
+            'UPDATE users set groupname = $1 where group_id = $2 RETURNING *',
+            [groupname, group_id]
+        )
+        //res.json(user.rows)
+        const users = await db.query(`SELECT * FROM users ORDER BY id ASC`)
+        res.json(users.rows)
+    }
+
+
     async deleteUser(req, res) {
         const id = req.params.id
         await db.query(`DELETE FROM users where id = $1`, [id])

@@ -35,16 +35,9 @@ const userReducer = (state = initialState, action) => {
             console.log('addUsers work')
             //console.log(state)
             return {
-                ...state,
-                // {
-                //     username: action.username,
-                //     groupname: action.groupname
-                // }
-                //...action.payload  
-                
-                //items: state.items.concat([action.payload])   
-                items: action.payload   
-//return { ...state, posts: state.posts.concat([action.payload]) }
+                ...state,  
+                items: action.payload   //IMPROVE THIS!!!!!
+
             }
         case 'GET_USERS' :
             return {
@@ -61,12 +54,11 @@ const userReducer = (state = initialState, action) => {
                 ...state,
                 items: action.payload
             }    
-        // case 'ADD_GROUP' :
-        //     return {
-        //         ...state,
-        //         //items: action.payload
-        //         items: state.items.concat([action.payload]) 
-        //     }          
+        case 'EDIT_GROUP_ON_USERS_PAGE' :
+            return {
+                ...state,
+                items: action.payload
+            }  
         default:
             return state
     }

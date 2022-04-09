@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react"
 import PropTypes, { func } from 'prop-types'
 import { useDispatch, useSelector } from "react-redux"
 import { getUsers } from '../action/getUsers'
-import { addUsers } from "../action/addUsers"
+//import { addUsers } from "../action/addUsers"
 //import TodoItem from "./UserItem"
 import {getGroups} from '../action/getGroups'
 import {GroupItem} from './GroupItem'

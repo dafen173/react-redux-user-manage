@@ -1,10 +1,10 @@
-export const editGroupOnUsersPage = (groupValue, id) => {
+export const editGroupOnUsersPage = (groupValue, groupId) => {
     return async dispatch => {
-        const response = await fetch(`http://localhost:8080/api/manage-user/${id}`, {
+        const response = await fetch(`http://localhost:8080/api/manage-user/update-groupname/${groupId}`, {
             method: 'PUT',      
             body: JSON.stringify({
             groupname: groupValue, 
-            id: id
+            group_id: groupId
             }),
             headers: {
             'Content-Type': 'application/json'

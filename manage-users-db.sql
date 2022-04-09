@@ -12,6 +12,6 @@ create TABLE groups(
     groupname VARCHAR(255),
     groupdescription VARCHAR(255),
     user_id INTEGER,
-    FOREIGN KEY (user_id) REFERENCES person (id)
+    FOREIGN KEY (user_id) REFERENCES users (id)
 );
 
