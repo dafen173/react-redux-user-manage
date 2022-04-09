@@ -50,7 +50,9 @@ function DeleteGroup (props) {
     </React.Fragment>
   )     
 }
-    
+
+
+
 export default DeleteGroup
 
 
