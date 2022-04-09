@@ -14,18 +14,29 @@ function DeleteGroup (props) {
     console.log(props.group.groupname)
     //dispatch(removeGroup(deleteId))
 
-    let groupIsEmpty = true
-    for (let i = 0; i < userSelector.length; i++) { 
-      for (let key in userSelector[i]) { 
-        if (userSelector[i][key] === props.group.groupname) { 
-          console.log('yessssssssssssss')
-          alert('This group already has users and CANNOT BE DELETED!')
-          groupIsEmpty = false
-        } 
-      } 
-    } 
-    if (groupIsEmpty) { 
-      console.log("grop is empty, can be deleted!!!")
+
+    // let groupIsEmpty = true
+    // for (let i = 0; i < userSelector.length; i++) { 
+    //   for (let key in userSelector[i]) {  
+    //     if (userSelector[i][key] === props.group.groupname) { 
+    //       console.log('yessssssssssssss')
+    //       alert('This group already has users and CANNOT BE DELETED!')
+    //       groupIsEmpty = false
+    //     }
+    //   } 
+    // } 
+    // if (groupIsEmpty) { 
+    //   console.log("grop is empty, can be deleted!!!")
+    //   dispatch(removeGroup(deleteId))
+    // }
+
+
+    //const selectedGroup = groupNameSelector.find(el => el.groupname === groupValue)
+    if ( userSelector.find(el => el.groupname === props.group.groupname) ) {
+      console.log('This group already has users and CANNOT BE DELETED!')
+      alert('This group already has users and CANNOT BE DELETED!')
+    } else {
+      console.log('grop is empty, can be deleted!!!')
       dispatch(removeGroup(deleteId))
     }
   }
