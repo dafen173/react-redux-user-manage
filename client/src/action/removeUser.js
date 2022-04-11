@@ -1,16 +1,28 @@
 export const removeUser = (id) => {
     return async dispatch => {
-        const response = await fetch(`http://localhost:8080/api/manage-user/${id}`, {
-              method: 'DELETE'
+        try {
+            const response = await fetch(`http://localhost:8080/api/manage-user/${id}`, {
+                method: 'DELETE'
             }) 
-        const json = await response.json()
-        dispatch({type: 'DELETE_USER', payload: json })
+            const json = await response.json()
+            dispatch({type: 'DELETE_USER', payload: json })
+        } catch (e) {
+            console.warn('Error: ', e.message)
+            alert('Error: ' + e.message)
+        }
     }
 }
 
-// function removeTodo(id){
-//       fetch(`http://localhost:8080/api/manage-user/${id}`, {
-//         method: 'DELETE'
-//       }) 
+
+
+// export const removeUser = (id) => {
+//     return async dispatch => {
+//         const response = await fetch(`http://localhost:8080/api/manage-user/${id}`, {
+//               method: 'DELETE'
+//             }) 
+//         const json = await response.json()
+//         dispatch({type: 'DELETE_USER', payload: json })
+//     }
+// }
 
 

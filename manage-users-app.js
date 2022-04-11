@@ -38,8 +38,6 @@ app.get('/', (req, res) => {
 
 
 
-//app.use('/api', userRouter)
-//app.use('/api', postRouter)
 app.use('/api', manageUserRouter)
 app.use('/api', manageGroupRouter)
 

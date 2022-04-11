@@ -1,42 +1,66 @@
-import React, {useState, useContext} from "react"
-import PropTypes, { func } from 'prop-types'
-//import Context from "../context"
+import React from 'react'
+import {useState} from "react"
+import { useDispatch, useSelector } from "react-redux"
+import PropTypes from "prop-types"
+import {editUser} from '../action/editUser'
 
 
-function EditUser (props) {
+export const EditUser = (props) => {
+  const groupNameSelector = useSelector(state => state.groups.groupitems)
 
-    //const todoCurrent333 = useContext(Context.todoCurrent)
+  const [isOpen, setIsOpen] = useState(false)
+  const [userValue, setUserValue] = useState(props.user.username)
+  const [groupValue, setGroupValue] = useState(props.user.groupname)
 
-    const [userValue, setUserValue] = useState(props.todoEditUser.username)
-    const [groupValue, setGroupValue] = useState(props.todoEditUser.groupname)
+  const editId = props.user.id
+  const dispatch = useDispatch()
 
-    const callBackHandler = (e) => {
-        e.preventDefault()
-        if (userValue.trim()) {
-            props.handlerEdit( userValue, groupValue )
-            setUserValue('')
-        }
+  const editHandler = (e) => {
+      e.preventDefault()
+      console.log(userValue)
+      console.log(groupValue)
 
-        console.log('log from edituser '+ props.todoEditUser.username)
-        console.log('log from edituser '+ props.todoEditUser.groupname)
-        console.log('log from edituser '+ props.todoEditUser.id)
-    }
-    
-    return (
-        <form onSubmit={callBackHandler}> 
-            <input value={userValue} onChange={ e => setUserValue(e.target.value)} />
-            <select value={groupValue} onChange={e => setGroupValue(e.target.value)}>  
-                <option value='oasis'>oasis777</option>
-                <option value="slipknot">slipknot777</option>
-                <option value="soad">soad777</option>  
-                <option value="korn">korn777</option>
-            </select>
-            <button type="submit">Edit User</button>            
-        </form>
-    )
+      dispatch(editUser(userValue, groupValue, editId))
+      setIsOpen(false)
+  }
+
+
+return (  
+    <React.Fragment>
+      <button className="edit" onClick={() => setIsOpen(true)}>
+          Edit
+      </button>
+
+      {isOpen && (
+        <div className='modal'>
+          <div className='modal-body'>
+            <h1>Edit User</h1>
+            <p>Введите новые данные</p>         
+            <form onSubmit={editHandler}> 
+                <input value={userValue} onChange={ e => setUserValue(e.target.value)} />
+                <select value={groupValue} onChange={ e => setGroupValue(e.target.value)}>                        
+                    {groupNameSelector.map( item => 
+                        <option key={item.id} value={item.groupname}>{item.groupname}</option>                                                   
+                    )}                   
+                </select>
+                <button type="submit">Edit User</button>            
+            </form>
+
+            <button onClick={() => setIsOpen(false)}>
+              Cancel
+            </button>
+          </div>
+        </div>
+      )}
+    </React.Fragment>
+  )     
 }
 
 
-export default EditUser
+EditUser.propTypes = {
+  //props: PropTypes.object.isRequired
+  props: PropTypes.object
+} 
 
 
+//export default EditUser

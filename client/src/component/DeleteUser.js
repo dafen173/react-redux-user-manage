@@ -1,15 +1,14 @@
 import React from 'react'
 import { useDispatch } from "react-redux"
 import {removeUser} from '../action/removeUser'
+import PropTypes from "prop-types"
 
-function DeleteUser (props) {
+const DeleteUser = (props) => {
   const dispatch = useDispatch()
-  const deleteId = props.todo.id
-  //const groupId = props.group.id
+  const deleteId = props.user.id
 
   function deleteHandler () {
-    console.log(deleteId)
-    //console.log(groupId)
+    //console.log(deleteId)
     dispatch(removeUser(deleteId))
   }
   return (  
@@ -21,6 +20,12 @@ function DeleteUser (props) {
   )     
 }
     
+
+DeleteUser.propTypes = {
+  //props: PropTypes.object.isRequired
+  props: PropTypes.object
+} 
+
 export default DeleteUser
 
 

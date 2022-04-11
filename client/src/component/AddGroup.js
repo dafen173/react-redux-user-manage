@@ -1,9 +1,5 @@
 import React, {useState, useEffect} from "react"
-import PropTypes, { func } from 'prop-types'
-import { useDispatch, useSelector } from "react-redux"
-// import { getUsers } from '../action/getUsers'
-// import { addUsers222 } from "../action/addUsers222"
-import { groups } from "../containers/groups"
+import { useDispatch} from "react-redux"
 import {addGroup} from '../action/addGroup'
 import { getUsers } from "../action/getUsers"
 
@@ -15,11 +11,9 @@ export const AddGroup = () => {
         dispatch(getUsers())
     }, [dispatch])
 
-   //console.log('AddUserRedux!!!!')
     const [groupName, setGroupName] = useState('')
     const [groupDescription, setGroupDescription] = useState('')
 
-    //const dispatch = useDispatch()
     const callBackHandler = (event) => {
         event.preventDefault()
         
@@ -40,9 +34,3 @@ export const AddGroup = () => {
     )
 }
 
-
-
-// const dispatch = useDispatch()
-//     useEffect(() => {
-//         dispatch(getUsers())
-//     }, [dispatch])

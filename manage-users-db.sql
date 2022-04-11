@@ -6,7 +6,6 @@ create TABLE users(
 );
 
 
-
 create TABLE groups(
     id SERIAL PRIMARY KEY,
     groupname VARCHAR(255),

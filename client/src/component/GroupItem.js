@@ -1,9 +1,5 @@
 import React, {useContext} from "react"
 import PropTypes from "prop-types"
-//import Context from '../context'
-import Modal from '../component/EditUserModal'
-import DeleteUser from "../component/DeleteUser"
-import EditUserRedux from '../component/EditUserRedux'
 import DeleteGroup from './DeleteGroup'
 import { EditGroup } from "./EditGroup"
 
@@ -23,11 +19,7 @@ const styles = {
   }
 
 export const GroupItem = ( {group, index} ) => {
-    // const classes = []
-    // if (group.completed) {
-    //   classes.push('done')
-    // }
-
+    
     return (
         <li style={styles.li}>
             <span>               
@@ -50,10 +42,9 @@ export const GroupItem = ( {group, index} ) => {
     )
 }
 
-/* TodoItem.propTypes = {
-    todo: PropTypes.object.isRequired,
-    index: PropTypes.number,
-    onChange: PropTypes.func.isRequired
-  } */
 
-   
+  GroupItem.propTypes = {
+    group: PropTypes.object.isRequired,
+    index: PropTypes.number
+} 
+

@@ -8,9 +8,9 @@ class UserController {
                 `INSERT INTO users (username, groupname, created, group_id) values ($1, $2, $3, $4) RETURNING *`, 
                 [username, groupname, created, group_id]
             )
-        //res.json(newPerson.rows[0])
-        const users = await db.query(`SELECT * FROM users ORDER BY id ASC`)
-        res.json(users.rows)
+        res.json(newPerson.rows[0])
+        // const users = await db.query(`SELECT * FROM users ORDER BY id ASC`)
+        // res.json(users.rows)
     }
     async getUsers(req, res) {
         const users = await db.query(`SELECT * FROM users ORDER BY id ASC`)

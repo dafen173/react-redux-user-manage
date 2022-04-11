@@ -1,7 +1,7 @@
 import React from 'react'
 import {useState} from "react"
 import { useDispatch } from "react-redux"
-import './EditUserModal.css'
+import PropTypes from "prop-types"
 import { editGroup } from '../action/editGroup'
 import { editGroupOnUsersPage } from '../action/editGroupOnUsersPage'
 
@@ -55,3 +55,10 @@ return (
 
   )     
 }
+
+
+EditGroup.propTypes = {
+  //props: PropTypes.object.isRequired
+  props: PropTypes.object
+} 
+

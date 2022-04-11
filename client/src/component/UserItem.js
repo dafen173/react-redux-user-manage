@@ -1,9 +1,7 @@
-import React, {useContext} from "react"
+import React from "react"
 import PropTypes from "prop-types"
-//import Context from '../context'
-import Modal from './EditUserModal'
 import DeleteUser from "./DeleteUser"
-import EditUserRedux from './EditUserRedux'
+import {EditUser} from './EditUser'
 
 const styles = {
     li: {
@@ -20,43 +18,34 @@ const styles = {
     }
   }
 
-function UserItem ( {todo, index} ) {
+function UserItem ( {user, index} ) {
 
-  //  const {removeTodoKey} = useContext(Context)
-
-    const classes = []
-    if (todo.completed) {
-      classes.push('done')
-    }
+    // const classes = []
+    // if (user.completed) {
+    //   classes.push('done')
+    // }
 
     return (
         <li style={styles.li}>
-            <span className={classes.join(' ')}>
-                {/* <input 
-                  type='checkbox' 
-                  checked={todo.completed}
-                  style={styles.input} 
-                  onChange={() => onChange(todo.id)} 
-                /> */}
-
+            {/* <span className={classes.join(' ')}>       */}
+            <span>            
                 <strong>{index + 1}</strong>
                 &nbsp;
                 &nbsp;
                 &nbsp;
-                {todo.username}  
+                {user.username}  
                 &nbsp;
                 &nbsp;
                 &nbsp;
-                {todo.created}   
+                {user.created}   
                 &nbsp;
                 &nbsp;
                 &nbsp;
-                {todo.groupname} 
+                {user.groupname} 
             </span>   
-
             <div>
-              <EditUserRedux todo={todo}/>
-              <DeleteUser todo={todo}/>  
+              <EditUser user={user}/>
+              <DeleteUser user={user}/>  
             </div>                    
         </li>
     )
@@ -64,11 +53,11 @@ function UserItem ( {todo, index} ) {
 
 
 
-/* TodoItem.propTypes = {
-    todo: PropTypes.object.isRequired,
-    index: PropTypes.number,
-    onChange: PropTypes.func.isRequired
-  } */
+UserItem.propTypes = {
+    user: PropTypes.object.isRequired,
+    index: PropTypes.number
+    //onChange: PropTypes.func.isRequired
+} 
 
 export default UserItem
 
