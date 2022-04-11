@@ -15,11 +15,12 @@ Start server side.
 Open a terminal and run the command in the `server` directory:
 ### `node manage-users-app`
 
-
+<br>
+<br>
 Start client side. 
 Open another terminal and run the command in the `client` directory:
 ### `npm start`
-cd
+
 Runs the app.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
