@@ -28,7 +28,7 @@ Group deletion is impossible if the user is assigned to this group.
 
 ## To Run the Project
 
-Install Dependencies first.
+After cloning this repository install Dependencies first.
 Client side dependencies by running in the `client` directory, you can run:
 ### `npm install`
 
