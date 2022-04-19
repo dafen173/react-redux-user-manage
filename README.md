@@ -1,4 +1,4 @@
-This project is an customer management system built with React, Node.js, Express, PostgreSQL and Redux.
+This project is a customer management system built with React, Node.js, Express, PostgreSQL and Redux.
 
 <br>
 
